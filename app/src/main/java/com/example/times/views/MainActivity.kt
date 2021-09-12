@@ -1,5 +1,6 @@
 package com.ny.times.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.times.api.url
+import com.example.times.interfaces.onItemClickInteface
+import com.example.times.views.DetailsScreen
 import com.ny.times.HomeFeed
 import com.ny.times.adapters.MainAdapter
 import com.ny.times.R
@@ -22,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
+    var news = ArrayList<HomeFeed>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,6 +101,7 @@ class MainActivity : AppCompatActivity() {
 
                 val homeFeed = gson.fromJson(body, HomeFeed::class.java)
 
+                news.add(homeFeed)
                 runOnUiThread {
                     recyclerView.adapter = MainAdapter(homeFeed)
                     progressBar.visibility = View.GONE
@@ -112,4 +117,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+
 }

@@ -4,30 +4,16 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.times.views.DetailsScreen
 import com.ny.times.HomeFeed
 import com.ny.times.R
-import java.util.*
-import kotlin.collections.ArrayList
-import android.widget.AdapterView.OnItemClickListener
-
-
-
+import okhttp3.Callback
 
 class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
 
-    private var listener: OnItemClickListener? = null
-
-    interface OnItemClickListener {
-        fun onItemClick(itemView: View?, position: Int)
-    }
-    fun setOnItemClickListener(listener: OnItemClickListener?) {
-        this.listener = listener
-    }
     override fun getItemCount(): Int {
         return homeFeed.results.size
     }
@@ -45,26 +31,34 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.Cus
         holder.title.text = news.title
         holder.description.text = news.byline
         holder.date.text = news.published_date
+        holder.itemView.setOnClickListener {
 
+            val intent = Intent(holder.itemView.context, DetailsScreen::class.java)
+            intent.putExtra(DetailsScreen.desc, news.abstract)
+            intent.putExtra(DetailsScreen.source, news.source)
+            intent.putExtra(DetailsScreen.updated, news.updated)
+            intent.putExtra(DetailsScreen.section, news.section)
+            intent.putExtra(DetailsScreen.subsection, news.subsection)
+            intent.putExtra(DetailsScreen.url, news.url)
+            intent.putExtra(DetailsScreen.title, news.title)
+            intent.putExtra(DetailsScreen.author, news.byline)
+            intent.putExtra(DetailsScreen.date, news.published_date)
+            holder.itemView.context.startActivity(intent)
+        }
 
     }
 
 
-    class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class CustomViewHolder(itemView: View, var collected: HomeFeed? = null) :
+        RecyclerView.ViewHolder(itemView) {
 
         val title: TextView = itemView.findViewById(R.id.tvTitle)
         val description: TextView = itemView.findViewById(R.id.tvDescription)
         val date: TextView = itemView.findViewById(R.id.tvDate)
 
-        init {
-            itemView.setOnClickListener {
-                val toast = Toast.makeText(itemView.context, "please wait..", Toast.LENGTH_LONG)
-                toast.show()
 
-            }
-        }
     }
 
 
-
 }
+
