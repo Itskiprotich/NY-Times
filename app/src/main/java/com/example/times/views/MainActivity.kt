@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ny.times.HomeFeed
@@ -42,8 +43,13 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
         when (item.itemId) {
-            R.id.action_settings -> {
+            R.id.app_bar_search -> {
                 return true
+            }   R.id.exit_app -> {
+            val toast = Toast.makeText(this, "Good bye", Toast.LENGTH_LONG)
+            toast.show()
+
+            return true
             }
 
         }
