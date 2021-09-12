@@ -1,4 +1,4 @@
-package com.example.times.views.ui.gallery
+package com.ny.times.views.ui.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

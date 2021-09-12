@@ -1,4 +1,4 @@
-package com.example.times
+package com.ny.times
 
 import org.junit.Test
 

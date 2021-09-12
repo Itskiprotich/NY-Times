@@ -1,4 +1,4 @@
-package com.example.times.views.ui.gallery
+package com.ny.times.views.ui.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.times.views.R
-import com.example.times.views.databinding.FragmentGalleryBinding
+import com.ny.times.views.R
+import com.ny.times.views.databinding.FragmentGalleryBinding
 
 class GalleryFragment : Fragment() {
 

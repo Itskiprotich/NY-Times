@@ -1,4 +1,4 @@
-package com.example.times.views.ui.slideshow
+package com.ny.times.views.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

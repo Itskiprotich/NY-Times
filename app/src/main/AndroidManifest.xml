@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.times">
+    package="com.ny.times">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.POne">
         <activity
-            android:name="com.example.times.views.MainActivity"
+            android:name=".views.Jam"
+            android:exported="true"
+            android:label="@string/title_activity_jam"
+            android:theme="@style/Theme.POne.NoActionBar" />
+        <activity
+            android:name=".views.MainActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,17 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.example.times.CourseDetailActivity"
+            android:name=".CourseDetailActivity"
             android:label="Course Detail"
             android:launchMode="singleTop">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.times.views.MainActivity">
-
-            </meta-data>
+                android:value="com.ny.times.views.MainActivity"></meta-data>
         </activity>
     </application>
 

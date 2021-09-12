@@ -1,4 +1,4 @@
-package com.example.times.views.ui.home
+package com.ny.times.views.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

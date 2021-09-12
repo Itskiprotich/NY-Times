@@ -1,4 +1,4 @@
-package com.example.times.views
+package com.ny.times.views
 
 import android.os.Bundle
 import android.view.Menu
@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.example.times.views.databinding.ActivityJamBinding
+import com.ny.times.views.databinding.ActivityJamBinding
 
 class Jam : AppCompatActivity() {
 

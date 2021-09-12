@@ -1,4 +1,4 @@
-package com.example.times.adapters
+package com.ny.times.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.times.CourseDetailActivity
-import com.example.times.HomeFeed
-import com.example.times.R
+import com.ny.times.CourseDetailActivity
+import com.ny.times.HomeFeed
+import com.ny.times.R
 
 class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
 
