@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.times.api.url
 import com.ny.times.HomeFeed
 import com.ny.times.adapters.MainAdapter
 import com.ny.times.R
@@ -30,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
         recyclerView = findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        //recyclerView.adapter = MainAdapter()
         progressBar.visibility = View.GONE
         fetchJson()
     }
@@ -85,9 +85,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchJson() {
 
-        val url =
-            "https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=yoilOdJi2A0wUj074USAvIhhHBTNyHil"
-
         val request = Request.Builder().url(url).build()
         progressBar.visibility = View.VISIBLE
         val client = OkHttpClient()
@@ -103,6 +100,7 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     recyclerView.adapter = MainAdapter(homeFeed)
                     progressBar.visibility = View.GONE
+
                 }
 
             }

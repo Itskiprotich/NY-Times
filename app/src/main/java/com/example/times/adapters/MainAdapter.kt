@@ -13,9 +13,21 @@ import com.ny.times.HomeFeed
 import com.ny.times.R
 import java.util.*
 import kotlin.collections.ArrayList
+import android.widget.AdapterView.OnItemClickListener
+
+
+
 
 class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
 
+    private var listener: OnItemClickListener? = null
+
+    interface OnItemClickListener {
+        fun onItemClick(itemView: View?, position: Int)
+    }
+    fun setOnItemClickListener(listener: OnItemClickListener?) {
+        this.listener = listener
+    }
     override fun getItemCount(): Int {
         return homeFeed.results.size
     }
@@ -41,14 +53,12 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.Cus
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val title: TextView = itemView.findViewById(R.id.tvTitle)
-
         val description: TextView = itemView.findViewById(R.id.tvDescription)
-
         val date: TextView = itemView.findViewById(R.id.tvDate)
 
         init {
             itemView.setOnClickListener {
-                val toast = Toast.makeText(itemView.context, "Coming next", Toast.LENGTH_LONG)
+                val toast = Toast.makeText(itemView.context, "please wait..", Toast.LENGTH_LONG)
                 toast.show()
 
             }
