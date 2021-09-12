@@ -2,6 +2,8 @@ package com.ny.times.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +33,22 @@ class MainActivity : AppCompatActivity() {
         fetchJson()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.search, menu)
+        return super.onCreateOptionsMenu(menu)
+
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle presses on the action bar menu items
+        when (item.itemId) {
+            R.id.action_settings -> {
+                return true
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
     private fun fetchJson() {
 
         val url = "https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=yoilOdJi2A0wUj074USAvIhhHBTNyHil"
@@ -40,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         val client = OkHttpClient()
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
-                progressBar.visibility= View.GONE
+
                 val body = response.body?.string()
 
                 val gson = GsonBuilder().create()
@@ -49,12 +67,15 @@ class MainActivity : AppCompatActivity() {
 
                 runOnUiThread {
                     recyclerView.adapter = MainAdapter(homeFeed)
+                    progressBar.visibility= View.GONE
                 }
 
             }
 
             override fun onFailure(call: Call, e: IOException) {
-                progressBar.visibility= View.GONE
+                runOnUiThread {
+                    progressBar.visibility= View.GONE
+                }
             }
         })
     }

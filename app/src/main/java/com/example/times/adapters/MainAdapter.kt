@@ -4,11 +4,15 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.ny.times.CourseDetailActivity
+import com.example.times.views.DetailsScreen
 import com.ny.times.HomeFeed
 import com.ny.times.R
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
 
@@ -25,20 +29,12 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.Cus
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
 
-        val video = homeFeed.results[position]
-        holder.title.text = video.title
-        holder.description.text = video.byline
-        holder.date.text = video.published_date
+        val news = homeFeed.results[position]
+        holder.title.text = news.title
+        holder.description.text = news.byline
+        holder.date.text = news.published_date
 
-       /* val thumbnailImageView = holder.thumb_nail
-        Picasso.with(holder.itemView.context).load(video.imageUrl).into(
-            thumbnailImageView
-        )
 
-        val channelImageView = holder.channel_image
-        Picasso.with(holder.itemView.context).load(video.channel.profileImageUrl).into(
-            channelImageView
-        )*/
     }
 
 
@@ -50,12 +46,11 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.Cus
 
         val date: TextView = itemView.findViewById(R.id.tvDate)
 
-
         init {
             itemView.setOnClickListener {
+                val toast = Toast.makeText(itemView.context, "Coming next", Toast.LENGTH_LONG)
+                toast.show()
 
-                val intent = Intent(itemView.context, CourseDetailActivity::class.java)
-                itemView.context.startActivity(intent)
             }
         }
     }

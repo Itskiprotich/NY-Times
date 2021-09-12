@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.POne">
         <activity
-            android:name=".views.Jam"
-            android:exported="true"
-            android:label="@string/title_activity_jam"
-            android:theme="@style/Theme.POne.NoActionBar" />
+            android:name="com.example.times.views.DetailsScreen"
+            android:label="News Detail"
+            android:launchMode="singleTop"
+            android:exported="true" />
         <activity
             android:name=".views.MainActivity"
             android:launchMode="singleTop">
@@ -26,12 +26,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CourseDetailActivity"
-            android:label="Course Detail"
+            android:name=".NewsDetailActivity"
+            android:label="News Detail"
             android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ny.times.views.MainActivity"></meta-data>
+                android:value="com.ny.times.views.MainActivity" />
         </activity>
     </application>
 
