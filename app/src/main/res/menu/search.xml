@@ -5,12 +5,18 @@
     <item
         android:id="@+id/app_bar_search"
         android:icon="@android:drawable/ic_menu_search"
-        android:title="Search"
+        android:title="@string/action_search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />
     <item
-        android:id="@+id/exit_app"
+        android:id="@+id/exit_about"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/exit_menu"
+        android:orderInCategory="100"
+        android:title="@string/action_exit"
         app:showAsAction="never" />
 </menu>

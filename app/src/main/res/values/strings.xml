@@ -11,4 +11,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_search">Search</string>
+    <string name="action_about">About</string>
 </resources>

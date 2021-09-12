@@ -37,8 +37,7 @@ $ Connect your real device/emulator for testing
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="Main Screen" src="https://github.com/Keeprawteach/NY-Times/blob/master/screenshots/device-2021-09-12-190450.png"> News Page |  <img width="1604" alt="Search" src="https://github.com/Keeprawteach/NY-Times/blob/master/screenshots/device-2021-09-12-190450.png"> Search Page |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/Keeprawteach/NY-Times/blob/master/screenshots/device-2021-09-12-190450.png"> |Results Page|
-
+|<img width="1604" alt="Main Screen" src="https://github.com/Keeprawteach/NY-Times/blob/master/screenshots/device-2021-09-12-190450.png"> News Page |  <img width="1604" alt="Search" src="https://github.com/Keeprawteach/NY-Times/blob/master/screenshots/search.png"> Search Page |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/Keeprawteach/NY-Times/blob/master/screenshots/exit.png"> Menu Actions|
 
 ### Author
 
