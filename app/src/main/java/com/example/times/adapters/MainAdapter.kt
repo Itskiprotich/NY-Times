@@ -39,6 +39,8 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<MainAdapter.Cus
             intent.putExtra(DetailsScreen.updated, news.updated)
             intent.putExtra(DetailsScreen.section, news.section)
             intent.putExtra(DetailsScreen.subsection, news.subsection)
+            intent.putExtra(DetailsScreen.nytdsection, news.nytdsection)
+            intent.putExtra(DetailsScreen.adx_keywords, news.adx_keywords)
             intent.putExtra(DetailsScreen.url, news.url)
             intent.putExtra(DetailsScreen.title, news.title)
             intent.putExtra(DetailsScreen.author, news.byline)

@@ -22,6 +22,8 @@ class DetailsScreen : AppCompatActivity() {
     private var text_source:TextView?=null
     private var text_updated:TextView?=null
     private var text_section:TextView?=null
+    private var text_nytdsection:TextView?=null
+    private var text_adx_keywords:TextView?=null
     private var link:String?=null
 
 
@@ -34,6 +36,8 @@ class DetailsScreen : AppCompatActivity() {
         const val updated = "updated"
         const val section = "section"
         const val subsection = "subsection"
+        const val nytdsection = "subsection"
+        const val adx_keywords = "adx_keywords"
         const val url = "url"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +52,8 @@ class DetailsScreen : AppCompatActivity() {
         val updated = intent.getStringExtra(DetailsScreen.updated)
         val section = intent.getStringExtra(DetailsScreen.section)
         val subsection = intent.getStringExtra(DetailsScreen.subsection)
+        val nytdsection = intent.getStringExtra(DetailsScreen.nytdsection)
+        val adx_keywords = intent.getStringExtra(DetailsScreen.adx_keywords)
          link = intent.getStringExtra(DetailsScreen.url)
 
         toolbar = findViewById(R.id.toolbar)
@@ -59,6 +65,8 @@ class DetailsScreen : AppCompatActivity() {
         text_source = findViewById(R.id.text_source)
         text_updated = findViewById(R.id.text_updated)
         text_section = findViewById(R.id.text_section)
+        text_nytdsection = findViewById(R.id.text_nytdsection)
+        text_adx_keywords = findViewById(R.id.text_adx_keywords)
 
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
@@ -74,7 +82,9 @@ class DetailsScreen : AppCompatActivity() {
         text_date!!.text="Published $date"
         text_source!!.text=source
         text_updated!!.text="Updated $updated"
-        text_section!!.text="$section - $subsection"
+        text_section!!.text="Section:$section - $subsection"
+        text_nytdsection!!.text=nytdsection
+        text_adx_keywords!!.text=adx_keywords
 
 
     }
